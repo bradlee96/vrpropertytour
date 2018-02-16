@@ -33,9 +33,12 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
+        System.out.println("checking if null");
         assert tabLayout != null;
-        tabLayout.addTab(tabLayout.newTab().setText(R.string.welcome));
-        tabLayout.addTab(tabLayout.newTab().setText(R.string.venue));
+        System.out.println("not null");
+        tabLayout.addTab(tabLayout.newTab().setText("Bedroom"));
+        tabLayout.addTab(tabLayout.newTab().setText("Living Room"));
+        tabLayout.addTab(tabLayout.newTab().setText("Kitchen"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
@@ -43,18 +46,28 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public Fragment getItem(int position) {
+                Bundle bundle = new Bundle();
+                Fragment tab = new TabFragment();
                 switch (position) {
                     case 0:
-                        return new WelcomeFragment();
+                        bundle.putString("picture", "bedroomSmall.jpg");
+                        tab.setArguments(bundle);
+                        return tab;
                     case 1:
-                        return new GorillaFragment();
+                        bundle.putString("picture", "livingroomSmall.jpg");
+                        tab.setArguments(bundle);
+                        return tab;
+                    case 2:
+                        bundle.putString("picture", "kitchenSmall.jpg");
+                        tab.setArguments(bundle);
+                        return tab;
                 }
                 return null;
             }
 
             @Override
             public int getCount() {
-                return 2;
+                return 3;
             }
         };
         assert viewPager != null;
