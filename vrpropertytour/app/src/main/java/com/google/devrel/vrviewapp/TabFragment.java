@@ -52,7 +52,7 @@ public class TabFragment extends Fragment {
 
         // pass in the name of the image to load from assets.
         VrPanoramaView.Options viewOptions = new VrPanoramaView.Options();
-        viewOptions.inputType = VrPanoramaView.Options.TYPE_STEREO_OVER_UNDER;
+        viewOptions.inputType = VrPanoramaView.Options.TYPE_MONO;
 
         // use the name of the image in the assets/ directory.
         String panoImageName = this.getArguments().getString("picture");
