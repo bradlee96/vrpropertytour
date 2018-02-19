@@ -17,8 +17,13 @@
 <resources>
     <string name="app_name">VR Property Tour</string>
     <string name="action_settings">Settings</string>
-    <string name="venue">About Gorillas</string>
     <string name="welcome">"Welcome"</string>
+<<<<<<< HEAD
     <string name="welcome_title">Welcome to the VR Property Tour</string>
     <string name="welcome_description"></string>
+=======
+    <string name="welcome_title">Introduction</string>
+    <string name="welcome_description">Description</string>
+    <string name="codelab_img_description">Image of a codelab computer</string>
+>>>>>>> c94616854d5beee970e8f471c437c916aa44cc96
 </resources>
