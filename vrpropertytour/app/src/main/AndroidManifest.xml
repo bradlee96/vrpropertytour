@@ -25,9 +25,7 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".LivingRoomActivity"
             android:label="@string/title_activity_living_room" />
@@ -40,6 +38,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".BedroomActivity"
+            android:label="@string/title_activity_bedroom" />
+        <activity
+            android:name=".KitchenActivity"
+            android:label="@string/title_activity_kitchen"></activity>
     </application>
 
 </manifest>

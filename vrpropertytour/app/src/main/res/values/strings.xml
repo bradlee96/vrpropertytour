@@ -24,4 +24,6 @@
     <string name="button_360">360 photo button</string>
     <string name="title_activity_living_room">LivingRoomActivity</string>
     <string name="title_activity_floorplan">FloorplanActivity</string>
+    <string name="title_activity_bedroom">BedroomActivity</string>
+    <string name="title_activity_kitchen">KitchenActivity</string>
 </resources>

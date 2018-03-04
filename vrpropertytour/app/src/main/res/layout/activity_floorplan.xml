@@ -19,31 +19,33 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="110dp"
-        android:layout_marginTop="216dp"
+        android:layout_marginStart="114dp"
+        android:layout_marginTop="218dp"
         android:contentDescription="@string/button_360"
         android:src="@android:drawable/btn_star"
         tools:background="@color/white_transparent" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/bedroomButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/livingRoomButton"
         android:layout_below="@+id/livingRoomButton"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="24dp"
         android:background="@color/white_transparent"
         android:contentDescription="@string/button_360"
-        android:src="@android:drawable/btn_star" />
+        android:src="@android:drawable/btn_star"
+        tools:background="@color/white_transparent" />
+
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/kitchenButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/imageButton3"
+        android:layout_above="@+id/bedroomButton"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="11dp"
-        android:layout_marginEnd="89dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="86dp"
         android:contentDescription="@string/button_360"
         android:src="@android:drawable/btn_star"
         tools:background="@color/white_transparent" />

@@ -14,12 +14,28 @@ public class FloorplanActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_floorplan);
 
-        ImageButton btn = (ImageButton) findViewById(R.id.livingRoomButton);
+        ImageButton livingRoomBtn = (ImageButton) findViewById(R.id.livingRoomButton);
+        ImageButton bedroomBtn = (ImageButton) findViewById(R.id.bedroomButton);
+        ImageButton kitchenBtn = (ImageButton) findViewById(R.id.kitchenButton);
 
-        btn.setOnClickListener(new View.OnClickListener() {
+        livingRoomBtn.setOnClickListener(new View.OnClickListener() {
             //@Override
             public void onClick(View v) {
                 startActivity(new Intent(FloorplanActivity.this, LivingRoomActivity.class));
+            }
+        });
+
+        bedroomBtn.setOnClickListener(new View.OnClickListener() {
+            //@Override
+            public void onClick(View v) {
+                startActivity(new Intent(FloorplanActivity.this, BedroomActivity.class));
+            }
+        });
+
+        kitchenBtn.setOnClickListener(new View.OnClickListener() {
+            //@Override
+            public void onClick(View v) {
+                startActivity(new Intent(FloorplanActivity.this, KitchenActivity.class));
             }
         });
     }
