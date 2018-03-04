@@ -20,4 +20,6 @@
     <string name="welcome">"Welcome"</string>
     <string name="welcome_title">Welcome to the VR Property Tour</string>
     <string name="welcome_description"></string>
+    <string name="drexel_floor_plan">drexel floor plan</string>
+    <string name="button_360">360 photo button</string>
 </resources>

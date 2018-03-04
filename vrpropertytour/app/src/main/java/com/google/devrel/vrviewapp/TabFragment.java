@@ -19,6 +19,9 @@ public class TabFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setRetainInstance(true);
+
         View v =  inflater.inflate(R.layout.tab_fragment, container,false);
         panoWidgetView = (VrPanoramaView) v.findViewById(R.id.pano_view);
         return v;
