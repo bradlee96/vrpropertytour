@@ -24,7 +24,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:layout_weight="1"
-        android:text="@string/welcome_title"
         android:textAlignment="center"
         android:textAppearance="?android:attr/textAppearanceLarge"/>
 
@@ -41,6 +40,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:layout_marginStart="@dimen/activity_horizontal_margin"
-        android:text="@string/welcome_description"/>
+        android:layout_marginStart="@dimen/activity_horizontal_margin"/>
 </LinearLayout>

@@ -21,7 +21,6 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 
 public class LivingRoomActivity extends AppCompatActivity {
 
@@ -29,16 +28,12 @@ public class LivingRoomActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         System.out.println("checking if null");
         assert tabLayout != null;
         System.out.println("not null");
-        //tabLayout.addTab(tabLayout.newTab().setText("Bedroom"));
         tabLayout.addTab(tabLayout.newTab().setText("Living Room"));
-        //tabLayout.addTab(tabLayout.newTab().setText("Kitchen"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
