@@ -1,11 +1,17 @@
 package com.google.devrel.vrviewapp;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +26,7 @@ import static android.app.Activity.RESULT_OK;
 import static com.google.vr.sdk.widgets.common.VrWidgetView.DisplayMode.FULLSCREEN_STEREO;
 
 
-public class TabFragment extends Fragment {
+public class RoomActivity extends AppCompatActivity {
     private VrPanoramaView panoWidgetView;
     private roomSwitcher roomSwitch;
     private ImageLoaderTask backgroundImageLoaderTask;
@@ -34,14 +40,12 @@ public class TabFragment extends Fragment {
         }
     }
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setRetainInstance(true);
+        setContentView(R.layout.tab_fragment);
 
-        View v =  inflater.inflate(R.layout.tab_fragment, container,false);
-        panoWidgetView = (VrPanoramaView) v.findViewById(R.id.pano_view);
+        panoWidgetView = (VrPanoramaView) findViewById(R.id.pano_view);
         panoWidgetView.setTransitionViewEnabled(false);
         panoWidgetView.setDisplayMode(FULLSCREEN_STEREO);
         roomSwitch = new roomSwitcher();
@@ -50,13 +54,13 @@ public class TabFragment extends Fragment {
         // Check to see if a recognition activity is present
         // if running on AVD virtual device it will give this message. The mic
         // required only works on an actual android device
-        PackageManager pm = this.getActivity().getPackageManager();
+        PackageManager pm = getPackageManager();
         List activities = pm.queryIntentActivities(new Intent(
                 RecognizerIntent.ACTION_RECOGNIZE_SPEECH), 0);
         if (activities.size() == 0) {
             System.out.println("mic not working");
         }
-        return v;
+        loadPanoImage();
     }
 
 
@@ -91,18 +95,12 @@ public class TabFragment extends Fragment {
         viewOptions.inputType = VrPanoramaView.Options.TYPE_STEREO_OVER_UNDER;
 
         // use the name of the image in the assets/ directory.
-        String panoImageName = this.getArguments().getString("picture");
+        String panoImageName = this.getIntent().getExtras().getString("picture");
 
         // create the task passing the widget view and call execute to start.
         task = new ImageLoaderTask(panoWidgetView, viewOptions, panoImageName);
-        task.execute(getActivity().getAssets());
+        task.execute(getAssets());
         backgroundImageLoaderTask = task;
-    }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        loadPanoImage();
     }
 
     public void startVoiceRecognitionActivity() {
@@ -119,13 +117,20 @@ public class TabFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == VOICE_RECOGNITION_REQUEST_CODE && resultCode == RESULT_OK) {
             ArrayList<String> matches = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-            System.out.println(matches);
+            Bundle bundle = new Bundle();
+            Intent intent = new Intent(this, RoomActivity.class);
             if (matches.contains("bedroom")) {
-                startActivity(new Intent(this.getActivity(), BedroomActivity.class));
+                bundle.putString("picture", "bedroomSmall.jpg");
+                intent.putExtras(bundle);
+                startActivity(intent);
             } else if (matches.contains("kitchen")) {
-                startActivity(new Intent(this.getActivity(), KitchenActivity.class));
+                bundle.putString("picture", "kitchenSmall.jpg");
+                intent.putExtras(bundle);
+                startActivity(intent);
             } else if (matches.contains("living")) {
-                startActivity(new Intent(this.getActivity(), LivingRoomActivity.class));
+                bundle.putString("picture", "livingroomSmall.jpg");
+                intent.putExtras(bundle);
+                startActivity(intent);
             }
         }
     }

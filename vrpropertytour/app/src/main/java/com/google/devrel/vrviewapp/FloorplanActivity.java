@@ -19,23 +19,35 @@ public class FloorplanActivity extends Activity {
         ImageButton kitchenBtn = (ImageButton) findViewById(R.id.kitchenButton);
 
         livingRoomBtn.setOnClickListener(new View.OnClickListener() {
-            //@Override
+            @Override
             public void onClick(View v) {
-                startActivity(new Intent(FloorplanActivity.this, LivingRoomActivity.class));
+                Bundle bundle = new Bundle();
+                Intent intent = new Intent(FloorplanActivity.this, RoomActivity.class);
+                bundle.putString("picture", "livingroomSmall.jpg");
+                intent.putExtras(bundle);
+                startActivity(intent);
             }
         });
 
         bedroomBtn.setOnClickListener(new View.OnClickListener() {
-            //@Override
+            @Override
             public void onClick(View v) {
-                startActivity(new Intent(FloorplanActivity.this, BedroomActivity.class));
+                Bundle bundle = new Bundle();
+                Intent intent = new Intent(FloorplanActivity.this, RoomActivity.class);
+                bundle.putString("picture", "bedroomSmall.jpg");
+                intent.putExtras(bundle);
+                startActivity(intent);
             }
         });
 
         kitchenBtn.setOnClickListener(new View.OnClickListener() {
-            //@Override
+            @Override
             public void onClick(View v) {
-                startActivity(new Intent(FloorplanActivity.this, KitchenActivity.class));
+                Bundle bundle = new Bundle();
+                Intent intent = new Intent(FloorplanActivity.this, RoomActivity.class);
+                bundle.putString("picture", "kitchenSmall.jpg");
+                intent.putExtras(bundle);
+                startActivity(intent);
             }
         });
     }
