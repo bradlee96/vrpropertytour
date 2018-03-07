@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static android.app.Activity.RESULT_OK;
+import static com.google.vr.sdk.widgets.common.VrWidgetView.DisplayMode.FULLSCREEN_STEREO;
 
 
 public class TabFragment extends Fragment {
@@ -41,6 +42,7 @@ public class TabFragment extends Fragment {
 
         View v =  inflater.inflate(R.layout.tab_fragment, container,false);
         panoWidgetView = (VrPanoramaView) v.findViewById(R.id.pano_view);
+        panoWidgetView.setDisplayMode(FULLSCREEN_STEREO);
         roomSwitch = new roomSwitcher();
         panoWidgetView.setEventListener(roomSwitch);
 
