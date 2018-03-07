@@ -42,6 +42,7 @@ public class TabFragment extends Fragment {
 
         View v =  inflater.inflate(R.layout.tab_fragment, container,false);
         panoWidgetView = (VrPanoramaView) v.findViewById(R.id.pano_view);
+        panoWidgetView.setTransitionViewEnabled(false);
         panoWidgetView.setDisplayMode(FULLSCREEN_STEREO);
         roomSwitch = new roomSwitcher();
         panoWidgetView.setEventListener(roomSwitch);
