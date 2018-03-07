@@ -77,4 +77,6 @@ public class BedroomActivity extends AppCompatActivity {
             }
         });
     }
+
+
 }
