@@ -11,7 +11,6 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class ImageLoaderTask extends AsyncTask<AssetManager, Void, Bitmap> {
-    private static final String TAG = "com.google.devrel.vrviewapp.ImageLoaderTask";
     private final String assetName;
     private final WeakReference<VrPanoramaView> viewReference;
     private final VrPanoramaView.Options viewOptions;

@@ -37,7 +37,7 @@ public class FloorplanActivity extends Activity {
             public void onClick(View v) {
                 Bundle bundle = new Bundle();
                 Intent intent = new Intent(FloorplanActivity.this, RoomActivity.class);
-                bundle.putString("picture", "bedroom1Small.jpg");
+                bundle.putString("picture", "bedroom1.jpg");
                 intent.putExtras(bundle);
                 startActivity(intent);
             }
@@ -48,7 +48,7 @@ public class FloorplanActivity extends Activity {
             public void onClick(View v) {
                 Bundle bundle = new Bundle();
                 Intent intent = new Intent(FloorplanActivity.this, RoomActivity.class);
-                bundle.putString("picture", "livingRoom.jpg"); //CHANGE HERE
+                bundle.putString("picture", "bedroom2.jpg");
                 intent.putExtras(bundle);
                 startActivity(intent);
             }

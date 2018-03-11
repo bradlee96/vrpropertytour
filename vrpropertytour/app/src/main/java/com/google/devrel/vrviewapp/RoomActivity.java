@@ -78,7 +78,7 @@ public class RoomActivity extends AppCompatActivity {
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
         intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Which room would you like to visit?");
         startActivityForResult(intent, VOICE_RECOGNITION_REQUEST_CODE);
-        
+
     }
 
     @Override
@@ -93,7 +93,7 @@ public class RoomActivity extends AppCompatActivity {
                 finish();
                 startActivity(intent);
             } else if (matches.contains("bedroom two")) {
-                bundle.putString("picture", "kitchen.jpg"); //CHANGE HERE
+                bundle.putString("picture", "bedroom2.jpg");
                 intent.putExtras(bundle);
                 finish();
                 startActivity(intent);
