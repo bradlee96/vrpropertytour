@@ -7,7 +7,6 @@ import android.graphics.Bitmap;
 import com.google.vr.sdk.widgets.pano.VrPanoramaView;
 import java.lang.ref.WeakReference;
 import android.graphics.BitmapFactory;
-import android.util.Log;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -40,7 +39,6 @@ public class ImageLoaderTask extends AsyncTask<AssetManager, Void, Bitmap> {
             lastName = assetName;
             return b;
         } catch (IOException e) {
-            //Log.e(TAG, "Could not decode default bitmap: " + e);
             return null;
         }
     }

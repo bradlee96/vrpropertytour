@@ -18,7 +18,7 @@ public class FloorplanActivity extends Activity {
         ImageButton bedroom1Btn = (ImageButton) findViewById(R.id.bedroom1Button);
         ImageButton bedroom2Btn = (ImageButton) findViewById(R.id.bedroom2Button);
         ImageButton bedroom3Btn = (ImageButton) findViewById(R.id.bedroom3Button);
-        ImageButton denBtn = (ImageButton) findViewById(R.id.denButton);
+        ImageButton sunRoomBtn = (ImageButton) findViewById(R.id.sunRoomButton);
         ImageButton kitchenBtn = (ImageButton) findViewById(R.id.kitchenButton);
 
         livingRoomBtn.setOnClickListener(new View.OnClickListener() {
@@ -65,12 +65,12 @@ public class FloorplanActivity extends Activity {
             }
         });
 
-        denBtn.setOnClickListener(new View.OnClickListener() {
+        sunRoomBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Bundle bundle = new Bundle();
                 Intent intent = new Intent(FloorplanActivity.this, RoomActivity.class);
-                bundle.putString("picture", "livingRoom.jpg"); //CHANGE HERE
+                bundle.putString("picture", "sunroom.jpg");
                 intent.putExtras(bundle);
                 startActivity(intent);
             }

@@ -61,7 +61,7 @@
         app:layout_constraintTop_toTopOf="@+id/imageView" />
 
     <ImageButton
-        android:id="@+id/denButton"
+        android:id="@+id/sunRoomButton"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="24dp"
