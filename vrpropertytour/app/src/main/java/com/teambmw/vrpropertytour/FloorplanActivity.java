@@ -1,4 +1,4 @@
-package com.google.devrel.vrviewapp;
+package com.teambmw.vrpropertytour;
 
 import android.os.Bundle;
 import android.app.Activity;

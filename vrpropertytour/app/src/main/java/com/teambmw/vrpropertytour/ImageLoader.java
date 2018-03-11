@@ -1,4 +1,4 @@
-package com.google.devrel.vrviewapp;
+package com.teambmw.vrpropertytour;
 
 import android.os.AsyncTask;
 
@@ -10,7 +10,7 @@ import android.graphics.BitmapFactory;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class ImageLoaderTask extends AsyncTask<AssetManager, Void, Bitmap> {
+public class ImageLoader extends AsyncTask<AssetManager, Void, Bitmap> {
     private final String assetName;
     private final WeakReference<VrPanoramaView> viewReference;
     private final VrPanoramaView.Options viewOptions;
@@ -18,7 +18,7 @@ public class ImageLoaderTask extends AsyncTask<AssetManager, Void, Bitmap> {
     private static WeakReference<Bitmap> lastBitmap = new WeakReference<>(null);
     private static String lastName;
 
-    public ImageLoaderTask(VrPanoramaView view, VrPanoramaView.Options viewOptions, String assetName) {
+    public ImageLoader(VrPanoramaView view, VrPanoramaView.Options viewOptions, String assetName) {
         viewReference = new WeakReference<>(view);
         this.viewOptions = viewOptions;
         this.assetName = assetName;

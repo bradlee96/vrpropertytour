@@ -1,4 +1,4 @@
-package com.google.devrel.vrviewapp;
+package com.teambmw.vrpropertytour;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,7 +16,7 @@ import static com.google.vr.sdk.widgets.common.VrWidgetView.DisplayMode.FULLSCRE
 public class RoomActivity extends AppCompatActivity {
     private VrPanoramaView panoWidgetView;
     private roomSwitcher roomSwitch;
-    private ImageLoaderTask backgroundImageLoaderTask;
+    private ImageLoader backgroundImageLoader;
     public static final int VOICE_RECOGNITION_REQUEST_CODE = 1234;
 
     private class roomSwitcher extends VrPanoramaEventListener {
@@ -60,7 +60,7 @@ public class RoomActivity extends AppCompatActivity {
     }
 
     private synchronized void load360Image() {
-        ImageLoaderTask task = backgroundImageLoaderTask;
+        ImageLoader task = backgroundImageLoader;
         if (task != null && !task.isCancelled()) {
             // Cancel any task from a previous loading.
             task.cancel(true);
@@ -68,9 +68,9 @@ public class RoomActivity extends AppCompatActivity {
         VrPanoramaView.Options viewOptions = new VrPanoramaView.Options();
         viewOptions.inputType = VrPanoramaView.Options.TYPE_STEREO_OVER_UNDER;
         String panoImageName = this.getIntent().getExtras().getString("picture");
-        task = new ImageLoaderTask(panoWidgetView, viewOptions, panoImageName);
+        task = new ImageLoader(panoWidgetView, viewOptions, panoImageName);
         task.execute(getAssets());
-        backgroundImageLoaderTask = task;
+        backgroundImageLoader = task;
     }
 
     public void voiceCommand() {
