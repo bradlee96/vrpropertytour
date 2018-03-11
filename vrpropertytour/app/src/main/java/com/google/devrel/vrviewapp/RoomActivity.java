@@ -119,16 +119,29 @@ public class RoomActivity extends AppCompatActivity {
             ArrayList<String> matches = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
             Bundle bundle = new Bundle();
             Intent intent = new Intent(this, RoomActivity.class);
-            if (matches.contains("bedroom")) {
-                bundle.putString("picture", "bedroomSmall.jpg");
+            System.out.println(matches);
+            if (matches.contains("bedroom one")) {
+                bundle.putString("picture", "bedroom1.jpg");
+                intent.putExtras(bundle);
+                startActivity(intent);
+            } else if (matches.contains("bedroom two")) {
+                bundle.putString("picture", "kitchen.jpg"); //CHANGE HERE
+                intent.putExtras(bundle);
+                startActivity(intent);
+            } else if (matches.contains("bedroom three")) {
+                bundle.putString("picture", "kitchen.jpg"); // CHANGE HERE
                 intent.putExtras(bundle);
                 startActivity(intent);
             } else if (matches.contains("kitchen")) {
-                bundle.putString("picture", "kitchenSmall.jpg");
+                bundle.putString("picture", "kitchen.jpg");
                 intent.putExtras(bundle);
                 startActivity(intent);
-            } else if (matches.contains("living")) {
-                bundle.putString("picture", "livingroomSmall.jpg");
+            } else if (matches.contains("sun room")) {
+                bundle.putString("picture", "kitchen.jpg"); //CHANGE HERE
+                intent.putExtras(bundle);
+                startActivity(intent);
+            } else if (matches.contains("living room")) {
+                bundle.putString("picture", "livingRoom.jpg");
                 intent.putExtras(bundle);
                 startActivity(intent);
             }

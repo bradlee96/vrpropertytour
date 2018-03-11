@@ -40,7 +40,7 @@ public class ImageLoaderTask extends AsyncTask<AssetManager, Void, Bitmap> {
             lastName = assetName;
             return b;
         } catch (IOException e) {
-            Log.e(TAG, "Could not decode default bitmap: " + e);
+            //Log.e(TAG, "Could not decode default bitmap: " + e);
             return null;
         }
     }
