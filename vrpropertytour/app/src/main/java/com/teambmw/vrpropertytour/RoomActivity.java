@@ -98,7 +98,7 @@ public class RoomActivity extends AppCompatActivity {
                 finish();
                 startActivity(intent);
             } else if (matches.contains("bedroom three")) {
-                bundle.putString("picture", "kitchen.jpg"); // CHANGE HERE
+                bundle.putString("picture", "bedroom3.jpg");
                 intent.putExtras(bundle);
                 finish();
                 startActivity(intent);
